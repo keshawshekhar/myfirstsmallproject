@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Register Here</title>
+  </head>
+  <body>
+  <center>
+  <font color="green"> <p th:text="${msg}"></p></font>
+  <font color="red"> <p th:text="${fmsg}"></p></font>
+  
+  	<form th:object="${counsellerformBinding}" th:action="@{/register}" th:method="post">
+  
+  	<table>
+  		<tr>
+  			<td>Name :</td>
+  			<td><input type="text" field="*{name}" name="name" required="required"></td>
+  		
+  		</tr>
+  		<tr>
+  			<td>Email :</td>
+  			<td><input type="email" field="*{emailid}" name="emailid" required="required"></td>
+  		
+  		</tr>
+  		<tr>
+  			<td>Password :</td>
+  			<td><input type="password" field="*{password}" name="password" required="required"></td>
+  		
+  		</tr>
+  		<tr>
+  			<td>Phone-No :</td>
+  			<td><input type="text" field="*{phoneno}" name="phoneno" required="required"></td>
+  		
+  		</tr>
+  		<tr>
+  			<td></td>
+  			<td><input type="submit" th:field="Submit" class="btn btn-primary"></td>
+  		
+  		</tr>
+  	
+  	
+  	</table>	
+  	
+  	</form>
+  	<br><br>
+  	<a href="/"> Login</a>
+  </center>
+  
+  
+    
+  </body>
+</html>

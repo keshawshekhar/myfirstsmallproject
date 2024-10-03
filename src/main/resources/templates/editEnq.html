@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Register Here</title>
+    
+    
+    
+    
+    
+  </head>
+  <body>
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="dashboard">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="enquiry">Add Enquiry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="enquiries">View Enquiries</a>
+        </li>
+        
+        <li class="nav-item">
+         <a class="btn btn-danger" aria-current="page" href="/">Logout</a>
+        </li>
+       
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+  
+  <font color="green"> <p th:text="${msg}"></p></font>
+  <font color="red"> <p th:text="${emsg}"></p></font>
+  <center>
+ <h1> Add Enqury  </h1>
+   
+  	<form th:object="${enq}" th:action="@{/enquiry}" th:method="post">
+  
+  
+  	<table>
+  		<tr>
+  			<td>Name :</td>
+  			<td><input type="text" field="*{StudentName}" name="StudentName" th:value="${enq.getStudentName()}"  required="required"></td>
+  		
+  		</tr>
+  		
+  		<tr>
+  			<td>Phone Number :</td>
+  			<td><input type="text" field="*{StudentPhoneNumber}" name="StudentPhoneNumber" th:value="${enq.getStudentPhoneNumber()}"  required="required"></td>
+  		
+  		</tr>
+  		
+  		<tr>
+  			<td>Course :</td>
+  			<td>
+  			<select field="*{courseName}" name="courseName" th:value="${enq.getCourseName()}">
+  			
+  			 
+	  			<option  value="" >-Select-</option>
+	  			<option value="Java" >Java</option>
+	  			<option value="PHP">PHP</option>
+	  			<option value=".Net">.Net</option>
+	  			<option value="C++">C++</option>
+  			</select>  		
+  		</tr>
+  		
+  		<tr>
+  			<td>Class Mode :</td>
+  			<td>
+  			<select field="*{classMode}" name="classMode" th:value="${enq.getClassMode()}">
+	  			<option value="">-Select-</option>
+	  			<option value="Online">Online</option>
+	  			<option value="Offline">Offline</option>
+	  		</select> 
+  		</tr>
+  		
+  		<tr>
+  			<td>Status :</td>
+  			<td>
+  			<select field="*{status}" name="status" th:value="${enq.getStatus()}">
+	  			<option value="">-Select-</option>
+	  			<option value="New">New</option>
+	  			<option value="Old">Old</option>
+	  			<option value="Lost">Lost</option>
+	  		</select> 
+  			
+  		</tr>
+  		
+  		<tr>
+  			<td></td>
+  			<td><input type="submit" th:field="Submit" class="btn btn-primary"></td>
+  		
+  		</tr>
+  		
+  		
+  		
+  		
+  	
+  	
+  	</table>	
+  	
+  	</form>
+  	
+  	
+  	</center>	
+  
+  
+  
+  
+  
+    
+  </body>
+</html>
